@@ -1,0 +1,9 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My Utility Scripts'
+theme="hugo-theme-lean"
+
+# for search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
