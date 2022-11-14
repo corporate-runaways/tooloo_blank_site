@@ -1,7 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My Utility Scripts'
-theme="hugo-theme-learn"
+theme="clu-hugo"
 
 # for search functionality
 [outputs]
