@@ -1,9 +1,9 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My Utility Scripts'
-theme="clu-hugo"
+theme="tooloo-hugo"
 
 # for search functionality
 [outputs]
-home = [ "HTML", "RSS", "JSON" ]
+home = [ "HTML", "JSON" ]
 
