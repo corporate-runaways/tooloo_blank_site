@@ -1,0 +1,9 @@
+<div id='{{.Get "file"}}'></div>
+<script>
+    AsciinemaPlayer.create(
+        "/asciinema/{{.Get "file" }}",
+        document.getElementById('{{.Get "file"}}'),
+        {terminalLineHeight: 2}
+    );
+  // terminalLineHeight: 2 because at larger font sizes the lines start to overlap.
+</script>
