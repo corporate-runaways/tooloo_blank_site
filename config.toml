@@ -7,3 +7,9 @@ theme="tooloo-hugo"
 [outputs]
 home = [ "HTML", "JSON" ]
 
+# needed to render the script tag
+# that'll load the asciicasts
+[markup.goldmark.renderer]
+unsafe= true
+
+
