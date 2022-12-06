@@ -8,6 +8,9 @@
     {{ partial "favicon.html" . }}
     <title>{{ .Title }}</title>
 
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/asciinema-player.css" />
+    <script src="{{ .Site.BaseURL }}js/asciinema-player.min.js"></script>
+
     {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
     <link href="{{"css/nucleus.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     <link href="{{"css/fontawesome-all.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
@@ -27,7 +30,19 @@
     {{- end }}
 
     <script src="{{"js/jquery-3.3.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+    <script>
+      // asciinema helpers
+      // large font users will need a lineHeight of 2 (or maybe more)
+      asciinemaLineHeight = 1;
 
+      function loadAsciinema(castUrl, elementId, lineHeight = asciinemaLineHeight){
+        element = document.getElementById(elementId);
+        element.innerHTML = "";
+        AsciinemaPlayer.create(castUrl,
+          element,
+          {terminalLineHeight: lineHeight} );
+      }
+    </script>
     <style>
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
